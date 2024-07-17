@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="MainStyle.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Document</title>
+</head>
+<style>
+    
+  *,
+  :after,
+  :before {
+    box-sizing: border-box;
+  }
+  .clearfix:after,
+  .clearfix:before {
+    content: "";
+    display: table;
+  }
+  .clearfix:after {
+    clear: both;
+    display: block;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .Loginwrap {
+    width: 100%;
+    margin: auto;
+    max-width: 525px;
+    min-height: 670px;
+    position: relative;
+    background: url(background2.jpg)no-repeat center;
+    background: transparent;
+    align-items: center;
+  }
+  .login {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: 90px 70px 50px 70px;
+    backdrop-filter: blur(1px);
+  }
+  .login .signI,
+  .login .signU {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    transition: all 0.4s linear;
+  }
+  .login .signin,
+  .login .signup,
+  .loginform .group .check {
+    display: none;
+  }
+  .login .tab,
+  .loginform .group .label,
+  .loginform .group .button {
+    text-transform: uppercase;
+  }
+  .login .tab {
+    font-size: 22px;
+    margin-right: 15px;
+    cursor: pointer;
+    padding-bottom: 5px;
+    margin: 0 15px 10px 0;
+    display: inline-block;
+    border-bottom: 2px solid transparent;
+  }
+  .login .signin:checked + .tab,
+  .login .signup:checked + .tab {
+    color: #fff;
+    border-color: #1161ee;
+    cursor: pointer;
+  }
+  .loginform {
+    min-height: 345px;
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+  }
+  .loginform .group {
+    margin-bottom: 15px;
+  }
+  .loginform .group .label,
+  .loginform .group .input,
+  .loginform .group .button {
+    width: 100%;
+    color: #fff;
+    display: block;
+  }
+  .loginform .group .input,
+  .loginform .group .button {
+    border: none;
+    padding: 15px 20px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.1);
+  }
+  .loginform .group input[data-type="password"] {
+    -webkit-text-security: circle;
+  }
+  .loginform .group .label {
+    color: #aaa;
+    font-size: 12px;
+  }
+  .loginform .group .button {
+    background: #1161ee;
+    cursor: pointer;
+  }
+  .loginform .group .button:hover {
+      background:#1454c4;
+      cursor: pointer;
+    }
+  .loginform .group label .icon {
+    width: 15px;
+    height: 15px;
+    border-radius: 2px;
+    position: relative;
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+  }
+  .loginform .group label .icon:before,
+  .loginform .group label .icon:after {
+    content: "";
+    width: 10px;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    transition: all 0.2s ease-in-out 0s;
+  }
+  .loginform .group label .icon:before {
+    left: 3px;
+    width: 5px;
+    bottom: 6px;
+    transform: scale(0) rotate(0);
+  }
+  .loginform .group label .icon:after {
+    top: 6px;
+    right: 0;
+    transform: scale(0) rotate(0);
+  }
+  .loginform .group .check:checked + label {
+    color: #fff;
+  }
+  .loginform .group .check:checked + label .icon {
+    background: #1161ee;
+  }
+  .loginform .group .check:checked + label .icon:before {
+    transform: scale(1) rotate(45deg);
+  }
+  .loginform .group .check:checked + label .icon:after {
+    transform: scale(1) rotate(-45deg);
+  }
+  .login
+    .signin:checked
+    + .tab
+    + .signup
+    + .tab
+    + .loginform
+    .signI {
+    transform: rotate(0);
+  }
+  .login .signup:checked + .tab + .loginform .signU {
+    transform: rotate(0);
+  }
+  .hr {
+    height: 2px;
+    margin: 60px 0 50px 0;
+    background: rgba(255, 255, 255, 0.2);
+  }
+  .Member {
+    text-align: center;
+  }
+
+  .Loginwrap{
+        float: right;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: calc(100% - 78%);
+        height: 100%;
+}
+</style>
+<body>
+  <header class="header">
+   <nav class="navbar">
+       <a href="Home.html">Home</a>
+       <a href="contact.html">Contact</a>
+       <a href="About.html">About Us</a>
+   </nav>
+   <!--<form action="Home.html"  class="search-bar" > -->
+     
+   </form>
+  </header>
+
+  
+<div class="background"></div>
+
+<div class="container">
+<div class="content">
+<h2 class="logo"><i class='bx bxl-firebase'></i>MK African Attire</h2>
+<div class="text-sci">
+<h2>Welcome to the MK African Attire Online Shopping Portal!<br> <span>To Our New Website.</span></h2>
+<p>We specialize in designed garments for all your African occasions, whether attending a traditional wedding,heritage celebration or just a fan of beautiful african prints,
+ M.K is here to cater to fashion needs..we offer an easy platform for your shopping needs</p>
+
+ <!--<footer>
+  <div class="social">
+    <a hre="#"><i class='bx bxl-facebook-circle'></i></a>
+    <a hre="#"><i class='bx bxl-twitter'></i></a>
+    <a hre="#"><i class='bx bxl-instagram'></i></a>
+    <a hre="#"><i class='bx bxl-gmail'></i></a>
+    </div>
+    </footer> -->
+</div>
+</div>
+</div>
+</div>
+<!--Form that containers sign-in and sign-up to be able to register and login to our fashion site and enjoy the beauty of MK AFRICAN ATTIRE-->
+<div class="Loginwrap">
+   <div class="login">
+     <input id="tab1" type="radio" name="tab"  class="signin"   checked><label for="tab1" class="tab">Sign In</label>
+     <input id="tab2" type="radio" name="tab" class="signup" checked><label for="tab2" class="tab">Sign Up</label>
+    <!--When you already filled all the neccesarry information on you signup form then you can be able to login and uenjoy our site-->
+     <div class="loginform">
+       <div id="signI" class="signI">
+        <div class="group">
+          <label for="email" class="label">Email Address</label>
+          <input id="se" type="text" class="input">
+        </div>
+         <div class="group">
+           <label for="pass" class="label">Password</label>
+           <input id="sp" type="password" class="input" data-type="password">
+         </div>
+         <div class="group">
+           <input id="check" type="checkbox" value="lsRememberMe" class="check" id="rememberMe" checked>
+           <label id="rememberMe"><span class="icon"></span> Keep me Signed in</label>
+         </div>
+         <div class="group">
+           <input type="submit" value="Sign In" onclick="signin()"  class="button" >
+         </div>
+          <div class="member">
+            <label id="fe" onclick="promptalert()"> Forgot your password?</label>
+          </div>
+       </div>
+<!--Sign up code where the user need to register in order to have an account to login-->
+       <div id="signU" class="signU">
+        <div class="group">
+        <label for="user" class="label">Username</label>
+        <input id="n1" type="text" class="input">
+        </div>
+        <div class="group">
+        <label for="email" class="label">Email Address</label>
+        <input id="e1" type="text" class="input">
+        </div>
+        <div class="group">
+        <label for="pass" class="label">Password</label>
+        <input id="p1" type="password" class="input" data-type="password">
+        </div>
+        <div class="group">
+        <label for="rep" class="label">Repeat Password</label>
+        <input id="p2" type="password" class="input" data-type="password"> 
+        </div>
+        <div class="group">
+        <input type="submit" value="Create" onclick="create_account()"  class="button">   
+        </div>
+         <div class="Member">
+           <label for="tab1">Already Member?</a>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+</body>
+<script>
+  /*I need  a function for store the information and work on remember checkbox*/
+  var emailArray=[];
+          var passwordArray=[];
+  
+          var signinBox = document.getElementById("signI");
+          var signupBox = document.getElementById("signU");
+          var forgetBox = document.getElementById("forgot");
+     
+  
+          var signinTab = document.getElementById("tab1");
+          var signupTab = document.getElementById("tab2");
+      
+
+
+  /*Function for sign-up-tab for user to be visible in order the user can be able  to register new account */
+          function signupTabFun(){
+              event.preventDefault();
+  
+              signupBox.style.visibility="visible";
+              signinBox.style.visibility="hidden";
+              forgetBox.style.visibility="hidden";
+
+/*Function for sign-in-tab user to be visible  account */
+          }
+          function signinTabFun(){
+              event.preventDefault();
+  
+              signupBox.style.visibility="hidden";
+              signinBox.style.visibility="visible";
+              forgetBox.style.visibility="hidden";
+          }
+
+/*Function for for-fun-tab user to be visible  when user forget the passowrd account */
+          function forTabFun(){
+              event.preventDefault();
+  
+              signupBox.style.visibility="hidden";
+              signinBox.style.visibility="hidden";
+              forgetBox.style.visibility="visible";
+  
+          }
+
+
+          /*Function to create the elements for New Account using the ID to call the value*/
+          function create_account() {
+    var n = document.getElementById("n1").value;
+    var e = document.getElementById("e1").value;
+    var p = document.getElementById("p1").value;
+    var cp = document.getElementById("p2").value;
+
+    // Validate input
+    if (n == '' || e == '' || p == '' || cp == '') {
+        alert("Enter each detail correctly");
+        return;
+    } else if (!validateName(n)) {
+        alert('Name is incorrect; it must contain alphabets only');
+        return;
+    } else if (!validateEmail(e)) {
+        alert('Invalid email format; please enter a valid email id');
+        return;
+    } else if (passwordArray.indexOf(e) !== -1) {
+        alert(e + " is already registered.");
+        return;
+    } else {
+        emailArray.push(e);
+        passwordArray.push(p);
+        saveUserDataLocally(e, p); // Save to localStorage
+        alert(e + " Thanks for registration. \nTry to login Now");
+
+        document.getElementById("n1").value = "";
+        document.getElementById("e1").value = "";
+        document.getElementById("p1").value = "";
+        document.getElementById("p2").value = "";
+    }
+}
+
+// Function to save user data to localStorage
+function saveUserDataLocally(email, password) {
+    localStorage.setItem(email, password);
+}
+
+// Validation functions
+function validateName(name) {
+    var letters = /^[A-Za-z]+$/;
+    return letters.test(name);
+}
+
+function validateEmail(email) {
+    var email_val = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    return email_val.test(email);
+}
+
+
+/*When the user enter the information this function check and see if its validate or not*/
+function signin() {
+    event.preventDefault();
+
+    var email = document.getElementById("se").value;
+    var password = document.getElementById("sp").value;
+
+    var storedPassword = localStorage.getItem(email);
+
+    if (!storedPassword) {
+        alert("Email does not exist.");
+        return;
+    }
+
+    if (storedPassword !== password) {
+        alert("Password does not match.");
+        return;
+    }
+
+    alert(email + " you are logged in now. \nWelcome to our website.");
+
+    // Redirect or do something after successful login
+    window.location.assign("MainPage.html");
+
+    document.getElementById("se").value = "";
+    document.getElementById("sp").value = "";
+}
+
+    emailInput = document.getElementById("se");
+
+if (localStorage.checkbox && localStorage.checkbox !== "") {
+  rmCheck.setAttribute("checked", "checked");
+  emailInput.value = localStorage.username;
+} else {
+  rmCheck.removeAttribute("checked");
+  emailInput.value = "";
+}
+
+function lsRememberMe() {
+    const rmCheck = document.getElementById("rememberMe");
+    const emailInput = document.getElementById("se");
+
+    if (rmCheck.checked && emailInput.value !== "") {
+        localStorage.setItem("username", emailInput.value);
+        localStorage.setItem("checkbox", rmCheck.value);
+    } else {
+        localStorage.removeItem("username");
+        localStorage.removeItem("checkbox");
+    }
+}
+
+/*When user forgot the password this part is backup the customer information,soon user enters the email then the account will be veryfied*/
+  
+        function promptalert(){
+          
+          var email = prompt("Please enter your email!");
+
+          if(emailArray.indexOf(email) == -1){
+              if (email == ""){
+                  alert("Email required."+ email);
+                  return ;
+              }
+              else{
+                  alert("Email does not exist.");
+              return ;
+              }
+                alert("Email does not exist., Operation Cancelled!");
+                  return ;
+              }
+          alert("email is send to your email check it in 24hr. \n Thanks");
+          document.getElementById("fe").value ="";
+      } 
+      // Sample items data (replace this with your actual items data)
+// Sample items data (replace this with your actual items data)
+const items = [
+  { id: 1, name: "Dress" },
+  { id: 2, name: "Shirt" },
+  { id: 3, name: "Pants" },
+  { id: 4, name: "Skirt" },
+  { id: 5, name: "Jacket" }
+];
+
+const searchInput = document.getElementById("searchInput");
+const searchResults = document.getElementById("searchResults");
+
+// Function to filter items based on search input
+function filterItems(searchTerm) {
+  const filteredItems = items.filter(item =>
+    item.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+  return filteredItems;
+}
+
+// Function to display search results
+function displayResults(searchResults) {
+  searchResults.innerHTML = "";
+  searchResults.innerHTML = "<h2>Search Results:</h2>";
+  if (searchResults.length === 0) {
+    searchResults.innerHTML += "<p>No items found.</p>";
+  } else {
+    searchResults.innerHTML += "<ul>";
+    searchResults.forEach(item => {
+      searchResults.innerHTML += `<li>${item.name}</li>`;
+    });
+    searchResults.innerHTML += "</ul>";
+  }
+}
+
+// Event listener for search input
+searchInput.addEventListener("input", function() {
+  const searchTerm = this.value.trim();
+  if (searchTerm !== "") {
+    const filteredItems = filterItems(searchTerm);
+    displayResults(filteredItems);
+  } else {
+    searchResults.innerHTML = ""; // Clear search results if search input is empty
+  }
+});
+
+  </script> 
+</html>
+
+            <!--<script src="myscript.js"></scrip> 
+              
+              https://codepen.io/AllThingsSmitty/pen/pOoeyz?editors=1010
+              
+              https://codepen.io/Mansoor-amin/pen/RNqrJV
+
+ 

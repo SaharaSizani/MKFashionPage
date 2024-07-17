@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="MainStyle.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Document</title>
+</head>
+<body>
+  <div class="background"></div>
+<div class="AboutUsPage">
+<h1>About Us Page</h1><br><br>
+<div class="contents">
+<h3><i>MK African Attire, established in March 2024,
+celebrates the beauty and uniqueness of traditional African fashion.<br> We source high-quality fabrics to create
+stunning garments inspired by African styles. From vibrant prints to intricate beadwork, our collections offer something special for everyone. We value our customers and strive to provide exceptional service, including. <br>
+Browse our collection online or visit our store discover your perfect piece of African heritage .<span id="dots">At MK African Attire, we draw inspiration from the diverse cultures and vibrant landscapes of Africa.
+From the rhythmic patterns of West African textiles to the graceful draping of East African garments, each piece in our collection tells a story of heritage and craftsmanship.</span></i></h3>
+<a hre="" onclick="myFunction()" id="myBtn">Read more</a>
+ 
+<script>
+  function myFunction() {
+    var dots = document.getElementById("dots");
+    var moreText = document.getElementById("more");
+    var btnText = document.getElementById("myBtn");
+ 
+    if (dots.style.display === "none") {
+      dots.style.display = "inline";
+      btnText.innerHTML = "Read more";
+      moreText.style.display = "none";
+    } else {
+      dots.style.display = "none";
+      btnText.innerHTML = "Read less";
+      moreText.style.display = "inline";
+    }
+  }
+  </script>
+ 
+  <h2 class="Team">Our Team Members</h2>
+  <div class="row">
+    <div class="column">
+      <img src="Lisa.jpg" alt="Lisa" style="width:50%">
+      <h2>Lisa Nywebeni </h2>
+    </div>
+   
+    <div class="column">
+      <img src="Gugu.jpg" alt="Gugu" style="width:40%">
+      <h2> Gugu Michel Nkosi</h2>
+    </div>
+   
+    <div class="column">
+      <img src="Thoko.jpg" alt="Thoko" style="width:40%">
+      <h2>Thoko Diya</h2>
+    </div>
+   
+    <div class="column">
+      <img src="Siwe.jpg" alt="Siwe" style="width:40%">
+      <h2>Sandisiwe Sizani</h2>
+    </div>
+</div>
+ 
+<footer>
+  <div class="social">
+    <a hre="https//:www.facebook.com"><i class='bx bxl-facebook-circle'></i></a>
+    <a hre="https//www."><i class='bx bxl-twitter'></i></a>
+    <a hre="#"><i class='bx bxl-instagram'></i></a>
+    <a hre="#"><i class='bx bxl-gmail'></i></a>
+    </div>
+    </footer>
+</div>
+</body>
+</html>

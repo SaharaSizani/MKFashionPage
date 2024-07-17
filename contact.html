@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="MainStyle.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body >
+<div class="background"></div>
+ <div class="contact" id="contact-form">
+        <p>Questions? Go ahead.</p>
+        <form a href="mkafricanf@gmail.com" method="post" target="_blank">
+        <p><input class="input " type="text" placeholder="Name" name="Name" id="name" required></p>
+        <p><input class="input " type="text" placeholder="Email" name="Email" id="email" required></p>
+        <p><input class="input " type="text" placeholder="Subject" name="Subject" id="subject" required></p>
+        <textarea id="message" name="message" required placeholder="Enter your Message"></textarea><br>
+        <input type="submit" value="Submit" id="submit">
+      </form>
+      <div class="Help">
+        <ol>
+          <h1>Help</h1>
+          <p> If you have any questions or need assistance, please refer to the information below.</p>
+          <h3>Frequently Asked Questions</h3> 
+          <li><strong>Q: How can I place an order?</strong> - To place an order, navigate to the Shop page and browse through our products. Click on a product to view its details and click "Add to Cart" to add it to your cart. Once you have finished selecting products, proceed to the Cart page to review your order and complete the checkout process.</li>
+          <li><strong>Q: What payment methods do you accept?</strong> - We accept all major credit cards, PayPal, and Apple Pay.</li>
+          <li><strong>Q: How long will it take to receive my order?</strong> - The delivery time depends on your location and the shipping method you choose during checkout. Typically, orders are delivered within 3-7 business days.</li>
+        </ol>
+      </div>
+    <footer>
+      <div class="Information">
+        <h4>Contact Information</h4> 
+        <p>If you need further assistance, please don't hesitate to contact our support team:</p>
+        <h4>Store</h4>
+        <a href="#"><i class='bx bxl-facebook-circle'> Mkafricanf</i></a>
+        <a href="#"><i class='bx bxs-phone-call'> 0742127691</i>
+        <p a href=" Mkafricanf@gmail.com"><i class='bx bx-envelope'> Mkafricanf@gmail.com</i></p>
+        <p a href="#"><i class='bx bxl-instagram'> @Mkafricanf</i></p>
+        <p a href="#"><i class='bx bxl-pinterest'> MK African Attire</i></p>
+        <p a href="#"><i class='bx bxl-twitter'> Mkafricanf.com</i></p>
+        <p a href="#"><i class='bx bxl-linkedin'> Mkafricanf@linkedIn.com</i></p>
+        <h4>Payment Method: We accept</h4>
+        <p> Cash on delivery</p>
+        <p><i class='bx bx-camera'> Online Payment</i></p>
+        <p><i class='bx bxs-credit-card'> Credit Card</i></p>
+        <a href="#">About us</a>
+        <a href="#">We're hiring</a>
+        <a href="#">Support</a></p>
+        <a href="#">Find store</a>
+        <a href="#">Shipment</a>
+        <a href="#">Payment</a>
+        <a href="#">Gift card</a>
+        <a href="#">Return</a>
+        <a href="#">Help</a>
+    </footer>
+    <div id="newsletter" class="modal">
+      <div class="modal-content">
+      <div class="containers">
+      <i onclick="document.getElementById('newsletter').style.display='none'" class=""></i>
+      <h2 class="wide">NEWSLETTER</h2>
+      <p>Join our mailing list to receive updates on new arrivals and special offers.</p>
+      <p><input class="input" type="text" placeholder="Enter e-mail"></p>
+      <button type="button" class="button" onclick="document.getElementById('newsletter').style.display='none'">Subscribe</button>
+      </div>
+      </div>
+      </div>
+      </form>
+      </div>
+  </div>
+    </div>
+
+</body>
+<script>
+    const constraints = {
+      name: {
+        presence: { allowEmpty: false }
+      },
+      email: {
+        presence: { allowEmpty: false },
+        email: true
+      },
+      subject: { 
+      presence: {allowEmpty: false} 
+      },
+      message: {
+        presence: { allowEmpty: false }
+      }
+    };
+
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', function(event) {
+      const formValues = {
+        name: form.elements.name.value,
+        subject: form.elements.subject.value,
+        email: form.elements.email.value,
+        message: form.elements.message.value
+      };
+
+      const errors = validate(formValues, constraints);
+      if (errors) {
+        event.preventDefault();
+        const errorMessage = Object.values(errors)
+          .map(function(fieldValues) {
+            return fieldValues.join(', ');
+          })
+          .join("\n");
+
+        alert(errorMessage);
+      }
+    }, false);
+  </script>
+</html>

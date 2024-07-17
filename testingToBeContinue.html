@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  </head>
+  <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.body {
+    width: 100%;
+    display: flex;
+    padding-top: 2rem;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.product-card {
+    border-radius: 1rem;
+    border: 1px solid gray;
+    padding: 1rem;
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    text-align: center;
+}
+
+.container{
+    padding: 0 1rem 0 2rem;
+}
+.heading{
+    text-align: center;
+    font-size: 1.3rem;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 1rem;
+}
+
+button {
+    background-color: #ffd84d;
+    color: rgb(60, 60, 60);
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    margin: 0.6rem;
+    transition: 0.1s ease-in-out;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+button:hover {
+    background-color: #fbcc24;
+    transform: translateY(2px);
+}
+
+.result {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cart {
+    min-width: 40%;
+    padding-right: 1rem;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+hr {
+    color: gray;
+    margin: 0.5rem 0;
+}
+
+.cart-items {
+    margin: 1rem 0;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 1rem;
+    border: 1px solid rgb(203, 203, 203);
+    padding: 0rem 1rem;
+    margin: 0.3rem 0;
+}
+.cart-detail{
+  display: flex;
+  align-items: center;
+  width: 60%;
+  justify-content: space-between;
+}
+
+.mid {
+    display: flex;
+    align-items: center;
+}
+
+.mid button {
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 0;
+    background-color: white;
+    color: gray;
+}
+
+.mid p {
+    padding: 0.3rem 0.5rem;
+    background-color: rgb(203, 203, 203);
+    border-radius: 0.3rem;
+    margin: 0 0.5rem;
+}
+
+.buy-btn {
+    width: 100%;
+    padding: 0.8rem 0;
+    margin: 0;
+    margin-top: 1.5rem;
+    border-radius: 0.2rem;
+}
+
+.footer{
+    text-align: center;
+    padding: 3rem 0 1rem 0;
+}
+
+
+@media screen and (max-width: 1150px) {
+    .product-card {
+        width: 100%;
+    }
+
+    .result {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .cart {
+        min-width: 50%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container {
+        width: 100%;
+        padding: 2rem;
+    }
+
+    .cart {
+        padding: 2rem;
+        width: 100%;
+    }
+}
+  </style>
+
+  <body>
+<!-- Continue Shopping Button -->
+<a href="testing.html"class="continue-shopping-btn">Continue Shopping</a> 
+    <h1 class="">Shopping Cart</h1> 
+    <div class="body">
+      <div class="container">
+        <h3 class="heading">Products</h3>
+        <div class="result"></div>
+      </div>
+      <div class="cart">
+        <div class="cart-header">
+          <h3>CART</h3>
+          <p class="noOfItems">0 items</p>
+        </div>
+        <hr noshade="true" size="1px" />
+        <div class="cart-items"></div>
+        <hr noshade="true" size="1px" />
+        <div class="cart-footer cart-header">
+          <h4>Total</h4>
+          <p class="total">R0</p>
+        </div>
+        <button class="click-collect-btn">
+            <div class="icon-container"><i class='bx bx-store'></i>
+            </div>
+            <div class="text"> Click and Collect</div>
+          </button>
+        <button class="delivery-btn"><div class="icon-container"><i class='bx bxs-truck'></i>
+        </div>
+        <div class="text">Shipping</div>
+        </button>
+        <button class="buy-btn">PROCEED TO BUY</button>
+      </div>
+    </div>
+    <button class="charge-fee-btn">Charge Fee</button>
+    <button class="cancel-order-btn"> Cancel Order</button>
+    <button class="pay-later-btn"> Pay Later</button>
+</body>
+      <script>
+// Event listener for continuing shopping
+document.querySelector(".continue-shopping-btn").addEventListener("click", function() {
+  // Redirect the user to the desired page for continuing shopping
+  window.location.href = "your_continue_shopping_page.html"; // Replace "your_continue_shopping_page.html" with the actual URL of your shopping page
+});
+
+const products = [
+  { name: "Dress", price: 2500, id: 1, quantity: 1, image: "images/beads1.jpg" },
+  { name: "Beads", price: 120, id: 2, quantity: 1, image: "images/beads2.jpg" },
+  { name: "Skirt", price: 500, id: 3, quantity: 1, image: "images/shweshwe.jpg" },
+  { name: "Women Full Set", price: 900, id: 4, quantity: 1, image: "images/women_set.jpg" },
+  { name: "T Shirt", price: 300, id: 5, quantity: 1, image: "images/tshirt.jpg" },
+  { name: "Mens Set", price: 100, id: 6, quantity: 1, image: "images/mens_set.jpg" }
+];
+
+
+let cart = []
+
+const productsHTML = products.map(
+  (product) => `<div class="product-card">
+        <h2 class="product-name">${product.name}</h2>
+        <strong>R${product.price.toFixed(2)}</strong>
+        <button class="product-btn" id=${product.id}>Add to Cart</button>
+    </div>`
+);
+
+const result = document.querySelector(".result");
+result.innerHTML = productsHTML.join("");
+
+function updateCart() {
+  const cartHTML = cart.map(
+    (item) => `<div class="cart-item">
+            <h3>${item.name}</h3>
+            <div class="cart-detail">
+                <div class="mid">
+                    <button onclick={decrItem(${item.id})}>-</button>
+                    <p>${item.quantity}</p>
+                    <button onclick={incrItem(${item.id})}>+</button>
+                </div>
+                <p>R${(item.price * item.quantity).toFixed(2)}</p>
+                <button onclick={deleteItem(${item.id})} class="cart-product" id=${item.id}>D</button>
+            </div>
+           </div>`
+  );
+
+  const cartItems = document.querySelector(".cart-items");
+  cartItems.innerHTML = cartHTML.join("");
+}
+
+
+let num = document.querySelectorAll(".product-btn").length;
+for (let i = 0; i < num; i++) {
+  document
+    .querySelectorAll(".product-btn")
+  [i].addEventListener("click", function (e) {
+    addToCart(products, parseInt(e.target.id));
+  });
+}
+
+function addToCart(products, id){
+  const product = products.find((product) => product.id === id);
+  const cartProduct = cart.find((product) => product.id === id);
+  if (cartProduct != undefined && product.id == cartProduct.id) {
+    incrItem(id);
+  } else {
+    cart.unshift(product);
+  }
+  updateCart();
+  getTotal(cart);
+};
+
+function getTotal(cart) {
+  let { totalItem, cartTotal } = cart.reduce(
+    (total, cartItem) => {
+      total.cartTotal += cartItem.price * cartItem.quantity;
+      total.totalItem += cartItem.quantity;
+      return total;
+    },
+    { totalItem: 0, cartTotal: 0 }
+  );
+  const totalItemsHTML = document.querySelector(".noOfItems");
+  totalItemsHTML.innerHTML = `${totalItem} items`;
+  const totalAmountHTML = document.querySelector(".total");
+  totalAmountHTML.innerHTML = `R${cartTotal.toFixed(2)}`; // Adding South African currency format here
+}
+function incrItem(id) {
+  for (let i = 0; i < cart.length; i++) {
+    if (cart[i] && cart[i].id == id) {
+      cart[i].quantity += 1;
+    }
+  }
+  updateCart();
+  getTotal(cart);
+}
+
+function decrItem(id) {
+  for (let i = 0; i < cart.length; i++) {
+    if (cart[i].id == id && cart[i].quantity > 1) {
+      cart[i].quantity -= 1;
+    }
+  }
+  updateCart();
+  getTotal(cart);
+}
+
+function deleteItem(id) {
+  for (let i = 0; i < cart.length; i++) {
+    if (cart[i].id === id) {
+      cart[i].quantity = 1;
+      cart.splice(i, 1);
+    }
+  }
+  updateCart();
+  getTotal(cart);
+}
+
+
+// Event listener for clearing the cart
+document.querySelector(".clear-cart-btn").addEventListener("click", function() {
+  cart = []; // Clear the cart array
+  updateCart(); // Update the cart display
+  getTotal(cart); // Update the total amount display
+});
+
+// Event listener for charging a fee
+document.querySelector(".charge-fee-btn").addEventListener("click", function() {
+  // You can implement the logic to charge a fee here
+  // For example, you might calculate and add a fixed fee to the total amount
+});
+
+// Event listener for enabling click and collect
+document.querySelector(".click-collect-btn").addEventListener("click", function() {
+  // You can implement the logic to enable click and collect here
+  // For example, you might display a message indicating that click and collect is enabled
+});
+
+// Event listener for handling shipping
+document.querySelector(".shipping-btn").addEventListener("click", function() {
+  // You can implement the logic to handle shipping here
+  // For example, you might display shipping options or calculate shipping costs
+});
+
+// Event listener for continuing shopping
+document.querySelector(".continue-shopping-btn").addEventListener("click", function() {
+  // You can implement the logic to continue shopping here
+  // For example, you might redirect the user to another page or display more products
+});
+
+// Event listener for canceling order
+document.querySelector(".cancel-order-btn").addEventListener("click", function() {
+  // You can implement the logic to cancel the entire order here
+  // For example, you might clear the cart and update the cart display
+  cart = []; // Clear the cart array
+  updateCart(); // Update the cart display
+  getTotal(cart); // Update the total amount display
+});
+
+// Event listener for Pay Later button
+document.querySelector(".pay-later-btn").addEventListener("click", function() {
+  // You can implement the logic for handling Pay Later functionality here
+  // For example, you might display a message indicating that the payment will be processed later
+  alert("Your order will be processed later. Thank you!");
+});
+
+
+
+      </script>
+
+</html>
